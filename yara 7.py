@@ -1,21 +1,37 @@
-print('player1')
-print('player2')
-count1=0
-count2=0
-lst=[1,2,3,4,5,6,7,8,9,10]
-While count1<100:
-    print (lst)
-    print('player1 choose from lst')
-    print(l[i])
-    count1=count 1+lst[i]
-While count2<100:
-    print (lst)
-    print ('player2 choose from lst')
-    print(l[i])
-    count2=count2+lst[i]
-if count1==100 and count1>count2:
-    print ('player1 wins game')
+L=[1,2,3,4,5,6,7,8,9,10]
+count=0
+counter=0
+
+p1=int(input("Player 1, enter number from 1 to 10: "))    
+while p1 not in L:    
+    p1=int(input("make sure the number is in range from 1 to 10: "))
+count=count+p1
+print ("sum=",count)
+           
+
+while True:    
+
+    if counter%2==0:           
+        p2=int(input("Player 2, enter number from 1 to 10: "))
+        while p2 not in L or p2 == p1:
+          p2=int(input("Try another number: "))
+        count=count+p2
+        print("sum=",count)
+        if count==100:
+            break
+
+    if counter%2!=0:     #player 1
+        p1=int(input("Player 1, enter number from 1 to 10: "))
+        while p1 not in L or p1 == p2:
+          p1=int(input("Try another number: "))
+        count=count+p1
+        print ("sum=",count)
+        if count==100:
+            break        
+
+    counter=counter+1
+    
+if counter%2==0:
+    print ("player 2 won")
 else:
-    if count2==100 and count2>count1:
-        print ('player2 wins game')
-        
+    print ("player 1 won")
